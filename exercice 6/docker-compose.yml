@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  web:
+    image: nginx:1.20
+    ports:
+      - "80:80"
+    environment:
+      - DEBUG=true
+      - API_KEY=hardcoded-secret-key
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_PASSWORD=password123
+    ports:
+      - "5432:5432"
